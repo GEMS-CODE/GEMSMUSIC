@@ -116,10 +116,25 @@ body{background:#060606;min-height:100vh;}
   .er{max-width:100%;}
   .ft{padding:10px 16px 18px;}
   .ft-t{font-size:9px;letter-spacing:2px;}
+  /* Vấn đề 1 */
+  .mobile-break{display:block;text-align:center;font-style:italic;}
+  .mobile-sub{display:block;text-align:center;font-style:italic;}
+  .desktop-only{display:none;}
+  /* Vấn đề 2 */
+  .mobile-block{display:block;text-align:center;}
+  /* Vấn đề 3 */
+  .mobile-only-ft{display:block;text-align:center;line-height:1.8;}
+
 }
 
 .pt{position:absolute;width:2px;height:2px;background:#C9952A;border-radius:50%;opacity:0;animation:fu 7s infinite;}
 @keyframes fu{0%{opacity:0;transform:translateY(0);}20%{opacity:0.25;}80%{opacity:0.04;}100%{opacity:0;transform:translateY(-90px);}}
+
+.mobile-break{display:none;}
+.mobile-sub{display:none;}
+.desktop-only{display:inline;}
+.mobile-block{display:inline;}
+.mobile-only-ft{display:none;}
 </style>
 <script>
 window.addEventListener('load',function(){
@@ -182,14 +197,14 @@ window.addEventListener('load',function(){
   <div class="bh"></div>
 
   <div class="hero">
-    <span class="d bright">GEMS MUSIC – Nơi âm nhạc đưa bạn vào những giấc mơ bất tận</span>
+    <span class="d bright"><span class="mobile-break">GEMS MUSIC</span><span class="mobile-sub">Nơi âm nhạc đưa bạn vào những giấc mơ bất tận</span><span class="desktop-only">GEMS MUSIC – Nơi âm nhạc đưa bạn vào những giấc mơ bất tận</span></span>
     <div class="genre">Art Song &nbsp;·&nbsp; Cinematic &nbsp;·&nbsp; Atmospheric</div>
     <span class="d mid">Dòng âm nhạc đi giữa ranh giới rất đời nhưng cũng rất mơ — trần trụi và thiêng liêng</span>
     <span class="d mid">Hãy cùng trải nghiệm những trạng thái loài người qua dòng chảy của âm nhạc</span>
     <div style="margin:20px 0;border-top:1px solid #1A1200;max-width:320px;margin:20px auto;"></div>
     <span class="d bright">GEMS MUSIC – where music leads you into endless dreams</span>
     <div class="genre">Art Song &nbsp;·&nbsp; Cinematic &nbsp;·&nbsp; Atmospheric</div>
-    <span class="d soft">Music that moves between the earthly and the dreamlike — raw and sacred</span>
+    <span class="d soft">Music that moves between the earthly and the dreamlike —<span class="mobile-br"> </span><span class="mobile-block">raw and sacred</span></span>
     <span class="d soft">Experience states of being through the flow of music</span>
   </div>
 
@@ -213,17 +228,20 @@ window.addEventListener('load',function(){
   </div>
 
   <div class="bh dim"></div>
-  <div class="ft"><div class="ft-t">© 2026 &nbsp;GEMS MUSIC &nbsp;·&nbsp; gemsmusic.global &nbsp;·&nbsp; All Rights Reserved</div></div>#169; 2026 &nbsp;GEMS MUSIC &nbsp;&nbsp;·&nbsp;&nbsp; gemsmusic.global &nbsp;&nbsp;·&nbsp;&nbsp; All Rights Reserved</div>
+  <div class="ft"><div class="ft-t"><span class="desktop-only">© 2026 &nbsp;GEMS MUSIC &nbsp;·&nbsp; gemsmusic.global &nbsp;·&nbsp; All Rights Reserved</span><span class="mobile-only-ft">© 2026 GEMS MUSIC · gemsmusic.global<br>All Rights Reserved</span></div></div>#169; 2026 &nbsp;GEMS MUSIC &nbsp;&nbsp;·&nbsp;&nbsp; gemsmusic.global &nbsp;&nbsp;·&nbsp;&nbsp; All Rights Reserved</div>
   <div class="bh"></div>
 </div>
 <script>
 const r=document.getElementById('gr');
-const positions=[2,4,7,10,13,16,19,22,25,28,31,34,37,40,43,46,49,52,55,58,61,64,67,70,73,76,79,82,85,88,91,94,97,3,8,14,20,27,33,39,45,51,57,63,69];
-positions.forEach((l,i)=>{
+for(let i=0;i<66;i++){
   const p=document.createElement('div');p.className='pt';
-  p.style.cssText='left:'+l+'%;bottom:'+(5+Math.random()*60)+'%;animation-delay:'+(Math.random()*6)+'s;animation-duration:'+(4+Math.random()*5)+'s;';
+  const left=1+Math.random()*98;
+  const bottom=3+Math.random()*65;
+  const delay=Math.random()*8;
+  const duration=4+Math.random()*5;
+  p.style.cssText='left:'+left+'%;bottom:'+bottom+'%;animation-delay:'+delay+'s;animation-duration:'+duration+'s;';
   r.appendChild(p);
-});
+}
 </script>
 
 <script>
