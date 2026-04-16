@@ -117,13 +117,13 @@ body{background:#060606;min-height:100vh;}
   .ft{padding:10px 16px 18px;}
   .ft-t{font-size:9px;letter-spacing:2px;}
   /* Vấn đề 1 */
-  .mobile-break{display:block;text-align:center;font-style:italic;}
-  .mobile-sub{display:block;text-align:center;font-style:italic;}
-  .desktop-only{display:none;}
+  .mobile-break{display:block !important;text-align:center;font-style:italic;}
+  .mobile-sub{display:block !important;text-align:center;font-style:italic;}
+  .desktop-only{display:none !important;}
   /* Vấn đề 2 */
-  .mobile-block{display:block;text-align:center;}
+  .mobile-block{display:block !important;text-align:center;}
   /* Vấn đề 3 */
-  .mobile-only-ft{display:block;text-align:center;line-height:1.8;}
+  .mobile-only-ft{display:block !important;text-align:center;line-height:1.8;}
 
 }
 
@@ -135,6 +135,12 @@ body{background:#060606;min-height:100vh;}
 .desktop-only{display:inline;}
 .mobile-block{display:inline;}
 .mobile-only-ft{display:none;}
+
+.mobile-break{display:none !important;}
+.mobile-sub{display:none !important;}
+.mobile-block{display:inline !important;}
+.mobile-only-ft{display:none !important;}
+.desktop-only{display:inline !important;}
 </style>
 <script>
 window.addEventListener('load',function(){
