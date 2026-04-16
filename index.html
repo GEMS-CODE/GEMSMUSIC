@@ -116,9 +116,13 @@ body{background:#060606;min-height:100vh;}
   .er{max-width:100%;}
   .ft{padding:10px 16px 18px;}
   .ft-t{font-size:9px;letter-spacing:2px;}
-  .d-title-vi{display:block !important;font-style:italic;}
-  .d-sub-vi{display:block !important;font-style:italic;}
-  .d-desktop-vi{display:none !important;}
+  .vi-line1{display:block !important;font-style:italic;margin-bottom:0;}
+  .vi-line2{display:block !important;font-style:italic;margin-top:0;}
+  .mob-wrap{display:inline !important;}
+
+  
+  
+  
   .ft-mob{display:block !important;text-align:center;line-height:2;}
   .ft-desk{display:none !important;}
   .mob-br{display:inline !important;}
@@ -151,6 +155,10 @@ body{background:#060606;min-height:100vh;}
 /* Desktop: ẩn mobile elements */
 .d-title-vi,.d-sub-vi,.ft-mob,.mob-br{display:none;}
 .d-desktop-vi,.ft-desk{display:inline;}
+
+.vi-line1{display:none;}
+.vi-line2{display:none;}
+.mob-wrap{display:none;}
 </style>
 <script>
 window.addEventListener('load',function(){
@@ -213,10 +221,10 @@ window.addEventListener('load',function(){
   <div class="bh"></div>
 
   <div class="hero">
-    <span class="d bright d-title-vi">GEMS MUSIC</span><span class="d bright d-sub-vi">Nơi âm nhạc đưa bạn vào những giấc mơ bất tận</span><span class="d bright d-desktop-vi">GEMS MUSIC – Nơi âm nhạc đưa bạn vào những giấc mơ bất tận</span><span class="mobile-sub">Nơi âm nhạc đưa bạn vào những giấc mơ bất tận</span><span class="desktop-only">GEMS MUSIC – Nơi âm nhạc đưa bạn vào những giấc mơ bất tận</span></span>
+    <span class="d bright vi-line1">GEMS MUSIC</span><span class="d bright vi-line2">Nơi âm nhạc đưa bạn vào những giấc mơ bất tận</span><span class="mobile-sub">Nơi âm nhạc đưa bạn vào những giấc mơ bất tận</span><span class="desktop-only">GEMS MUSIC – Nơi âm nhạc đưa bạn vào những giấc mơ bất tận</span></span>
     <div class="genre">Art Song &nbsp;·&nbsp; Cinematic &nbsp;·&nbsp; Atmospheric</div>
     <span class="d mid">Dòng âm nhạc đi giữa ranh giới rất đời nhưng cũng rất mơ — trần trụi và thiêng liêng</span>
-    <span class="d mid">Hãy cùng trải nghiệm những trạng thái loài người qua dòng chảy của âm nhạc</span>
+    <span class="d mid">Hãy cùng trải nghiệm<span class="mob-wrap"><br></span> những trạng thái loài người qua dòng chảy của âm nhạc</span>
     <div style="margin:20px 0;border-top:1px solid #1A1200;max-width:320px;margin:20px auto;"></div>
     <span class="d bright">GEMS MUSIC – where music leads you into endless dreams</span>
     <div class="genre">Art Song &nbsp;·&nbsp; Cinematic &nbsp;·&nbsp; Atmospheric</div>
