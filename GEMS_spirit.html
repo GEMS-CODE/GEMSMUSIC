@@ -20,7 +20,7 @@ canvas{display:block;width:100%;height:100%;}
 <script>
 const cv=document.getElementById('cv');
 const ctx=cv.getContext('2d');
-const W=1920,H=1080;
+const W=window.innerWidth, H=window.innerHeight;
 cv.width=W;cv.height=H;
 
 const CHARS=['♩','♪','♫','♬','𝄞','𝄢'];
