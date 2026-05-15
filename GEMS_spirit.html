@@ -7,16 +7,12 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{width:100%;height:100%;background:transparent;overflow:hidden;}
 canvas{display:block;width:100%;height:100%;}
-#ui{position:fixed;bottom:18px;right:22px;z-index:10;}
-.btn{padding:5px 14px;border-radius:20px;border:0.5px solid rgba(255,80,80,0.2);background:rgba(0,0,0,0.4);color:rgba(255,100,100,0.3);font-size:10px;letter-spacing:1.5px;cursor:pointer;font-family:inherit;transition:all 0.3s;}
-.btn.recording{color:#ff6060;border-color:rgba(255,60,60,0.6);}
+
 </style>
 </head>
 <body>
 <canvas id="cv"></canvas>
-<div id="ui">
-  <button class="btn" id="bRec" onclick="toggleRec()">⏺ REC</button>
-</div>
+
 <script>
 const cv=document.getElementById('cv');
 const ctx=cv.getContext('2d');
@@ -308,24 +304,6 @@ function loop(ts){
 }
 requestAnimationFrame(ts=>{lastTime=ts;requestAnimationFrame(loop);});
 
-let recorder=null,chunks=[];
-function toggleRec(){
-  const btn=document.getElementById('bRec');
-  if(!recorder){
-    chunks=[];
-    const stream=cv.captureStream(30);
-    recorder=new MediaRecorder(stream,{mimeType:'video/webm;codecs=vp9',videoBitsPerSecond:8000000});
-    recorder.ondataavailable=e=>chunks.push(e.data);
-    recorder.onstop=()=>{
-      const a=document.createElement('a');
-      a.href=URL.createObjectURL(new Blob(chunks,{type:'video/webm'}));
-      a.download='GEMS_fairy.webm';a.click();recorder=null;
-    };
-    recorder.start();btn.textContent='⏹ STOP';btn.classList.add('recording');
-  }else{
-    recorder.stop();btn.textContent='⏺ REC';btn.classList.remove('recording');
-  }
-}
 </script>
 </body>
 </html>
