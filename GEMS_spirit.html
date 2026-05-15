@@ -294,7 +294,7 @@ function drawTrail(){
 let lastTime=0;
 function loop(ts){
   const dt=Math.min(ts-lastTime,40);lastTime=ts;
-  ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
+  ctx.clearRect(0,0,W,H);
   drawDust(ts);
   updateFairy(dt);
   updateTrail();
